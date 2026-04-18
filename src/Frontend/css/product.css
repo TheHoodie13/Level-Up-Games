@@ -1,0 +1,257 @@
+/* Responsive grid that auto-fills cards at 260px width */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 260px);
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Fixed 5-column grid */
+.grid.grid--rows {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+}
+
+.catalog,
+.product-info {
+    text-align: left !important;
+}
+
+.catalog .grid,
+.product-info .grid {
+    justify-content: start !important;
+    justify-items: start !important;
+}
+
+/* Spacing around catalog sections */
+.catalog {
+    margin: 2rem 0;
+}
+
+/* Product Grid */
+.item-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 4fr);
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* product card */
+.card {
+    position: relative;
+    width: 260px;
+    height: 380px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--page-accent-4);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Full-width variant for flexible layouts */
+.card.card--compact {
+    width: 100%;
+    max-width: none;
+}
+
+/* Hover effect: slight lift + neon glow */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 18px rgba(0, 255, 204, 0.45);
+}
+
+/* Image container inside card */
+.card__media {
+    position: relative;
+    background: rgb(255, 255, 255);
+    min-height: 180px;
+    display: flex;
+    aspect-ratio: 16 / 9;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;   
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Product image inside card */
+.card__media img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: fill;
+}
+
+/* Card body: spacing + vertical stacking */
+.card__body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    flex: 1;
+}
+
+/* Titles + price colouring */
+.card__title, h3,
+.price {
+    margin-top: absolute; 
+    color: var(--page-accent-3);
+}
+
+/* Product title text */
+.card__title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Price text inside card */
+.price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-top: auto;
+}
+
+/* Action buttons row (e.g., Add to Cart) */
+.card__actions {
+    display: flex;
+    gap: .5rem;
+}
+
+/* discount and "tag" for products */
+.badge {
+    position: absolute !important;
+    top: .7rem;
+    left: .7rem; /* sets to the top left of the card */
+    background: var(--page-highlight);
+    color: #0d1b2a;
+    padding: .2rem .5rem;
+    border-radius: 999px;
+    font-size: .65rem;
+    font-weight: 700;
+    max-width: 72px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 0 0 6px rgba(0, 255, 204, 0.35);
+}
+
+.item-page {
+    margin: 2rem 0;
+    color: var(--page-accent-4) !important;
+}
+
+/* Large media container for product page */
+.item-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--page-accent-5);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 1rem;
+    max-width: 700px;
+}
+
+/* Product image inside item page */
+.item-media img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Product title text */
+.item-title {
+    margin: .75rem 0 .25rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+/* Release date text */
+.item-release {
+    margin: 0 0 .75rem;
+    opacity: .85;
+    font-size: .95rem;
+}
+
+/* Preorder highlight colour */
+.item-release--preorder {
+    color: var(--page-highlight);
+    font-weight: 600;
+}
+
+.item-price-block {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: .5rem 0 1rem;
+}
+
+/* Current price */
+.item-price-current {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #cafaff;
+}
+
+/* RRP (strikethrough) */
+.item-price-rrp {
+    text-decoration: line-through;
+    opacity: .7;
+    color: var(--page-accent-1);
+}
+
+/* Discount badge */
+.item-price-discount {
+    background: #4c6b22;
+    padding: .15rem .4rem;
+    border-radius: 3px;
+    font-size: .85rem;
+    color: #fff;
+}
+
+.item-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin-top: .5rem;
+}
+
+/* Primary CTA button (Add to Cart) */
+.item-cta .button.primary {
+    background: #1f3d2a;
+    color: #ffffff;
+    border: 1px solid #162d1f;
+    font-weight: 700;
+    transition: background .25s ease, box-shadow .25s ease;
+}
+
+/* Hover effect: brighter + neon glow */
+.item-cta .button.primary:hover {
+    background: #275a38;
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.35);
+}
+
+.item-description h2 {
+    margin-bottom: .25rem;
+}
+
+.item-description p {
+    margin-top: .5rem;
+    line-height: 1.5;
+}
+
+/* Product metadata list (platform, genre, etc.) */
+.item-meta ul {
+    list-style: none;
+    padding-left: 0;
+    margin: .5rem 0 0;
+    line-height: 1.5;
+}
+
+.item-meta li + li {
+    margin-top: .35rem;
+}

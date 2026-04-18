@@ -1,0 +1,192 @@
+body {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 4px solid var(--border);
+    background-color: var(--page-accent-3);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #0A1F44;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+    align-items: center;       
+    min-height: 100vh;         
+}
+
+
+h1 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--page-accent-4);
+}
+
+.auth-container {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+
+#login,
+#signup {
+    justify-content: center;
+    display: flex;
+    max-width: 560px;
+    max-height: fit-content !important;
+}
+
+form {
+    background: var(--page-bg-dark);
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    height: 400px;
+    width: 900px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.45);
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    border: 2px solid var(--border);
+    white-space: normal;
+}
+
+textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--page-accent-3);
+    color: var(--page-text-light);
+    resize: vertical;
+}
+
+form > div,
+form > label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--page-accent-3);
+    color: var(--page-text-light);
+}
+
+input::placeholder {
+    color: transparent;
+}
+
+label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    color: var(--page-accent-2);
+    transition: 0.2s ease;
+    pointer-events: none;
+    padding: 0 4px;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    top: -8px;
+    font-size: 12px;
+    color: var(--page-highlight);
+}
+
+button {
+    padding: 12px;
+    background: var(--page-accent);
+    color: var(--page-accent-4);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--page-accent-2);
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: -1rem;
+}
+
+.success-message {
+    color: var(--page-accent-2);
+    margin-bottom: 1rem;
+}
+
+/* Layout wrapper for left + right sections */
+.account-wrapper {
+    display: flex;
+    gap: 4rem;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    white-space: nowrap;
+}
+
+/* Remove inline width */
+.account-form {
+    width: 420px;
+    justify-content: center;
+}
+
+/* Divider line */
+.divider {
+    height: 2px;
+    background: var(--border);
+    margin: 2rem 0;
+    opacity: 0.4;
+}
+
+/* Buttons */
+.btn-update {
+    padding: 12px;
+    background: var(--page-accent);
+    color: var(--page-accent-4);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.btn-update:hover {
+    background: var(--page-accent-2);
+}
+
+.btn-logout,
+.btn-return {
+    padding: 12px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: 600;
+    display: block;
+}
+
+.btn-logout {
+    background: var(--page-accent);
+    color: var(--page-accent-4);
+}
+
+.btn-return {
+    background: var(--page-accent-2);
+    color: var(--page-accent-4);
+}
+
+/* Password section title */
+.password-title {
+    color: var(--page-accent-4);
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,71 @@
+:root {
+    /* global variables for page colours */
+    --page-accent: #54af6f;
+    --page-accent-2: #74c69d;
+    --page-accent-3: #17263d;
+    --page-accent-4: #fff;
+    --page-accent-5: #172644;
+
+    --page-highlight: #00ffcc;
+    --page-bg-navy: #3a57d0;
+    --page-bg-dark: #0d1b2a;
+    --page-text-light: #e0e6ed;
+
+    --border: #0a1f44;
+    --page-code: 'Roboto Mono', 'Fira Code', monospace;
+}
+
+html {
+    /* mint to navy background (old) */
+    background: linear-gradient(
+        180deg,
+        var(--page-accent-2),
+        var(--page-accent),
+        var(--page-accent-3)
+    );
+    font-family: var(--page-code);
+    color: var(--page-text-light);
+}
+
+body {
+    max-width: 1400px; 
+    margin: 0 auto;
+    border: 4px solid var(--border);
+    background-color: var(--page-accent-3);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #0A1F44;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+.section-divider {
+    width: 100%;
+    height: 2px;
+    background: var(--page-accent-2);
+    margin: 3rem 0;
+    opacity: 0.4;
+}
+
+.about-page {
+    display: list-item;
+    min-height: 45vw;
+    max-height: 100%;
+    text-align: center;
+    padding: 2rem;
+    background: var(--page-bg-dark);
+    font-family: var(--page-code), !important;
+}
+
+section {
+    max-width: none !important;
+    width: 100% !important;
+}

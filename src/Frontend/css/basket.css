@@ -1,0 +1,118 @@
+.catalog {
+    color: var(--page-accent-4) !important;
+    min-height: 25vw;
+
+}
+
+.basket-list {
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+/* Each basket row */
+.basket-item {
+    border: 1px solid var(--border);
+    overflow: hidden !important;
+    position: relative;
+    border-radius: 24px;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    background: var(--page-accent);
+    transition: background .2s ease;
+}
+
+.basket-item:hover {
+    background: var(--page-accent-2);
+}
+
+.basket-item img {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+    display: block;
+}
+
+.basket-details {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.basket-details strong {
+    font-size: 1rem;
+    color: var(--page-accent-4);
+}
+
+.basket-details span {
+    display: block;
+    margin-top: .25rem;
+    opacity: .85;
+    font-size: .9rem;
+}
+
+.basket-actions {
+    display: flex;
+    gap: .5rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.basket-actions .button.small {
+    padding: .35rem .75rem;
+    font-size: .8rem;
+}
+
+/* Danger button */
+.button.danger {
+    background: #7a1f1f;
+    border: 1px solid #5c1616;
+    color: #fff;
+}
+
+.button.danger:hover {
+    background: #a62828;
+}
+
+.basket-summary {
+    margin-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.basket-summary strong {
+    font-size: 1.2rem;
+    color: var(--page-accent-4);
+}
+
+.basket-summary .button {
+    padding: .6rem 1.2rem;
+    font-size: .9rem;
+}
+
+@media (max-width: 600px) {
+    .basket-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .basket-actions {
+        justify-content: center;
+    }
+
+    .basket-item img {
+        margin: 0 auto;
+    }
+}

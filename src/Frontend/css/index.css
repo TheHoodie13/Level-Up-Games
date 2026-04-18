@@ -1,0 +1,190 @@
+.hero {
+    /* purple/red gradient ontop of controller image */
+    background-image:
+        linear-gradient(135deg,
+            rgba(149, 0, 255, 0.15),
+            rgba(143, 84, 84, 0.25)
+        ),
+        url("../../assets/img/hero.png");
+    background-size: cover; /* image fills the container */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: clamp(220px, 35vw, 420px);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 1rem 0 2rem;
+    box-shadow: 0 0 12px rgba(0, 255, 204, 0.25);
+}
+
+.hero img {
+    height: 255px;
+    width: auto;
+}
+
+.hero_inner {
+    /* set a max width and center */
+    max-width: 1080px;
+    margin: 0 auto;
+    color: var(--page-highlight);
+}
+
+.brand {
+    /* uppercase title text is boldened and forced uppercase */
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 900;
+    color: var(--page-highlight);
+    text-transform: uppercase;
+}
+.brand span {
+    color: var(--page-accent);
+}
+
+.tag {
+    font-weight: 700;
+    margin-top: .25rem;
+}
+.sub {
+    margin-top: .5rem;
+    opacity: .85;
+}
+
+/*new releases carousel*/
+.carousel {
+    position: relative;
+    margin: 1rem 0 2rem;
+}
+
+.carousel__viewport {
+    position: relative; /* container for slides */
+    overflow: hidden; /* hide trim images to prevent scaling issues */
+    border-radius: 16px;
+    height: clamp(410px, 35vw, 410px);
+    background: var(--page-bg-dark);
+}
+
+.slide {
+    position: absolute; /* stack slides on top of each other */
+    inset: 0;
+    opacity: 0; /* non active slides are opaque */
+    pointer-events: none;
+    transition: opacity .6s ease;
+}
+.slide.is-active {
+    opacity: 1; /* active slide is visible */
+    pointer-events: auto;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.carousel__btn {
+    position: absolute; /* position buttons ontop of carousel */
+    top: 50%;
+    transform: translateY(-20%);
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border-radius: 4px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* navy neon colour scheme */
+    background: var(--page-bg-dark);
+    color: var(--page-highlight);
+    border: 1px solid var(--page-highlight); 
+}
+.carousel__btn:hover {
+    /* inverts colours on hover */
+    background: var(--page-highlight); 
+    color: #0d1b2a;
+}
+.carousel__btn.prev { left: .5rem; }
+.carousel__btn.next { right: .5rem; }
+
+
+.carousel__dots {
+    /* active slide dots on bottom of carousel */
+    display: flex;
+    gap: .35rem;
+    position: absolute;
+    bottom: .5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.carousel__dots button {
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, .7);
+    padding: 0;
+}
+.carousel__dots button.active {
+    /* active dot is determined by carousel.js using n + 1 format */
+    /* active dot is highlighted with accent colour */
+    background: var(--page-accent-2);
+    border-color: var(--page-accent-2);
+}
+
+.seperator-bar {
+    /*page seporator used between section of my website*/
+    width: 100%;
+    margin: 1rem 0 1.5rem;
+    padding: .75rem 0; /* thin line with border (navy) colours stretches accross the full page*/
+    border-top: 2px solid var(--border);
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    justify-content: center;
+    gap: .75rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    /* uses filters from SQL to organise products*/
+    padding: .45rem .9rem;
+    border-radius: 999px;
+    border: 1px solid var(--page-highlight); 
+    background: transparent;
+    color: var(--page-highlight);
+    font-weight: 700;
+    transition: background .25s ease, color .25s ease;
+}
+.filter-btn:hover,
+.filter-btn.active {
+    /* highlights neon blue on selection*/
+    background: var(--page-highlight);
+    color: #0d1b2a;
+}
+
+body, p, li, h1, h2, h3, h4, h5, h6,
+a, .link,
+.section-white,
+.section-white p,
+.section-white h2,
+.section-white h3 {
+    color: var(--page-accent-4);
+}
+
+a, .link {
+    font-weight: 700;
+}
+a:hover, .link:hover {
+    color: var(--page-accent);
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        height: clamp(180px, 45vw, 300px);
+    }
+
+    .filter-bar {
+        display: none;
+    }
+}
